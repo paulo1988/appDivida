@@ -1,0 +1,79 @@
+<!--
+  Generated template for the EditShoppingItemPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title><h1 style="font-family: Impact">STATUS ATUAL</h1></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <ion-grid style="background: #f0f0f0">
+  
+  
+              <!-- cor verde clara #e6fbe6  vermelho claro= #ffe2e2
+              style="background: #e6fbe6"
+              -->  
+
+                          
+    <ion-row style="background: white">
+        <ion-col ><h2 style="font-family: Impact">Descrição</h2></ion-col><ion-col><h2 style="font-family: Impact;text-align: center">{{shoppingItem.itemName}}</h2></ion-col>      </ion-row>
+          <ion-row>
+      <ion-col  ><h2 style="font-family: Impact">Data</h2></ion-col><ion-col><h2 style="font-family: Impact;text-align: center">{{shoppingItem.myDate}}</h2></ion-col>
+             </ion-row>
+          <ion-row style="background: white">
+               <ion-col  ><h2 style="font-family: Impact"> Qtd Parcela</h2></ion-col><ion-col><h2 style="font-family: Impact;text-align: center">{{shoppingItem.qtdParcela}}</h2></ion-col>
+             </ion-row>
+               <ion-row>
+                    <ion-col  ><h2 style="font-family: Impact">Status</h2></ion-col><ion-col><h2 style="font-family: Impact;text-align: center">{{shoppingItem.tipoDivida}}</h2></ion-col>
+                 </ion-row>
+                  <ion-row style="background: white">
+                       <ion-col  ><h2 style="font-family: Impact">Pagamento</h2></ion-col><ion-col><h2 style="font-family: Impact;text-align: center">{{shoppingItem.tipoPagamento}}</h2></ion-col>
+                      </ion-row>
+                    <ion-row>
+                          <ion-col><h2 style="font-family: Impact">Valor Total</h2></ion-col><ion-col><h2 style="font-family: Impact;text-align: center">{{person.valor}}</h2></ion-col>
+                        </ion-row>
+                         <ion-row style="background: white">
+                              <ion-col  ><h2 style="font-family: Impact">VL Parcela </h2></ion-col><ion-col><h2 style="font-family: Impact;text-align: center">{{shoppingItem.valorParcela}}</h2></ion-col>
+                                </ion-row>
+                                <ion-row style="background: black">
+                                    <ion-col>
+                                        <h1 style="font-family: Impact;text-align: center;color: white">HISTORICO</h1> 
+                                    </ion-col>
+                                  </ion-row>
+                                  <ion-row style="background: white">
+                                      <ion-col>
+                                          <h1 style="font-family: Impact;text-align: center">VALOR DA DIVIDA</h1> 
+                                      </ion-col>
+                                      <ion-col>
+                                          <h1 style="font-family: Impact;text-align: center">{{shoppingItem.histValor}}</h1> 
+                                      </ion-col>
+                                    </ion-row>
+                                    <ion-row>
+                                    <ion-col>
+                                        <h1 style="font-family: Impact;text-align: center">VALOR DA PARCELA</h1> 
+                                    </ion-col>
+                                    <ion-col>
+                                        <h1 style="font-family: Impact;text-align: center">{{shoppingItem.histValorParcela}}</h1> 
+                                    </ion-col>
+                                  </ion-row>
+            </ion-grid>
+  
+            
+   
+  <button ion-button block (click)="editShoppingItem(shoppingItem)">PAGAR</button>
+  
+
+ 
+              
+            
+
+</ion-content>

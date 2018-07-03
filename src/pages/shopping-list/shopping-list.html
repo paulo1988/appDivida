@@ -1,0 +1,67 @@
+
+<ion-header>
+   
+   
+
+  <ion-navbar color="primary">
+    <ion-title>PENDENTES E PAGOS</ion-title>
+       <ion-buttons end>
+            <button ion-button icon-only 
+            (click)="navigateToAddShoppingPage()">
+               <ion-icon name="add"></ion-icon>
+            </button>
+       </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+   <ion-list>
+     <!-- Repeat the ion-item for as many items that we
+    have inside of our shopping list. -->
+      <ion-grid>
+         <ion-row style="text-align: center">
+            <ion-col col-4>DATA</ion-col>
+            <ion-col col-3>DIVIDA</ion-col>
+            <ion-col col-3>VALOR</ion-col>
+            <ion-col col-2>PARC</ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid *ngFor="let item of shoppingListRef$ | async"
+      (click)="selectShoppingItem(item)">
+      
+      <ng-container *ngIf="item.tipoDivida=='paga'; else notFirst">
+                  <!-- cor verde clara #e6fbe6  vermelho claro= #ffe2e2-->  
+        <ion-row style="background: #e6fbe6;text-align: center"><ion-col col-4>{{item.myDate}}</ion-col>
+        <ion-col col-3>{{item.itemName}}</ion-col>
+        <ion-col col-3>R${{item.valorParcela}}</ion-col>
+        <ion-col col-2>{{item.qtdParcela}}</ion-col></ion-row>
+        <ion-row><ion-col>{{p.valorTotal}}</ion-col></ion-row>  
+      </ng-container>
+      
+      
+      <ng-template #notFirst>
+        <ion-row style="background: #ffe2e2;text-align: center"><ion-col col-4>{{item.myDate}}</ion-col>
+          <ion-col col-3>{{item.itemName}}</ion-col>
+          <ion-col col-3>R${{item.valorParcela}}</ion-col>
+        <ion-col col-2>{{item.qtdParcela}}</ion-col></ion-row>
+        <ion-row><ion-col>{{p.valorTotal}}</ion-col></ion-row>
+      </ng-template>
+      
+      
+      </ion-grid>
+      
+      <!-- item como botao , para clicar em cima e abrir
+        a propriedade do item em questao
+        <button color="primary" ion-item (click)="teste()">
+          Button item
+        </button> -->
+      
+
+   </ion-list>
+  
+   
+
+</ion-content>
